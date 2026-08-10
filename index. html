@@ -1,0 +1,463 @@
+countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 25px 18px;
+      }
+
+      .letter {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <main>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="hero">
+
+      <div class="small">هناك شخص يستحق كل هذا الكلام...</div>
+
+      <div class="heart-big">❤️</div>
+
+      <h1>هبة</h1>
+
+      <p class="subtitle">
+        هذا الموقع كله لكِ،
+        لأن يوم ميلادك مو مجرد يوم عادي.
+      </p>
+
+      <button class="button" onclick="showSurprise()">
+        اضغطي هنا ✨
+      </button>
+
+      <div id="surprise" class="surprise">
+        <p class="subtitle">
+          كل عام وأنتِ أجمل شيء صار في حياتي ❤️
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- العد التنازلي -->
+    <section>
+
+      <h2>باقي على يومك المميز 🎂</h2>
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <strong id="days">00</strong>
+          <span>يوم</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="hours">00</strong>
+          <span>ساعة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="minutes">00</strong>
+          <span>دقيقة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="seconds">00</strong>
+          <span>ثانية</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- رسالة -->
+    <section>
+
+      <h2>رسالة لكِ 💌</h2>
+
+      <div class="letter">
+
+        هبة،
+
+        <br><br>
+
+        ما أعرف كيف أقدر أختصر كل الكلام اللي في قلبي
+        في رسالة صغيرة، لكن أعرف شيء واحد...
+
+        <br><br>
+
+        وجودك في حياتي شيء أنا ممتن له جدًا،
+        وكل لحظة معك لها مكان خاص عندي.
+
+        <br><br>
+
+        أتمنى سنتك الجديدة تكون مليانة ضحك،
+        وأيام حلوة، وأشياء تحققينها وتفتخرين فيها.
+
+        <br><br>
+
+        وأتمنى مهما مرت السنوات،
+        يظل عندك دائمًا سبب يخليك تبتسمين.
+
+        <div class="signature">
+          أحبك ❤️
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- قسم الصور والفيديو لاحقًا -->
+    <section>
+
+      <h2>ذكرياتنا 📸</h2>
+
+      <p>
+        هنا راح نحط صورنا وفيديوهاتنا وذكرياتنا
+        بعد ما نجهز الموقع ❤️
+      </p>
+
+    </section>
+
+
+    <footer>
+      صُنع بحب ❤️ خصيصًا لهبة
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    // العد التنازلي إلى 22 أغسطس القادم
+    function getBirthdayDate() {
+
+      const now = new Date();
+      let year = now.getFullYear();
+
+      let birthday = new Date(year, 7, 22, 0, 0, 0);
+
+      if (birthday <= now) {
+        birthday = new Date(year + 1, 7, 22, 0, 0, 0);
+      }
+
+      return birthday;
+    }
+
+
+    function updateCountdown() {
+
+      const now = new Date();
+      const target = getBirthdayDate();
+
+      const difference = target - now;
+
+      const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+
+    // زر المفاجأة
+    function showSurprise() {
+
+      const surprise = document.getElementById("surprise");
+
+      surprise.classList.add("show");
+
+      for (let i = 0; i < 20; i++) {
+        createHeart();
+      }
+    }
+
+
+    // قلوب متحركة
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+      heart.textContent = "❤️";
+
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+      heart.style.
+countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 25px 18px;
+      }
+
+      .letter {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <main>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="hero">
+
+      <div class="small">هناك شخص يستحق كل هذا الكلام...</div>
+
+      <div class="heart-big">❤️</div>
+
+      <h1>هبة</h1>
+
+      <p class="subtitle">
+        هذا الموقع كله لكِ،
+        لأن يوم ميلادك مو مجرد يوم عادي.
+      </p>
+
+      <button class="button" onclick="showSurprise()">
+        اضغطي هنا ✨
+      </button>
+
+      <div id="surprise" class="surprise">
+        <p class="subtitle">
+          كل عام وأنتِ أجمل شيء صار في حياتي ❤️
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- العد التنازلي -->
+    <section>
+
+      <h2>باقي على يومك المميز 🎂</h2>
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <strong id="days">00</strong>
+          <span>يوم</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="hours">00</strong>
+          <span>ساعة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="minutes">00</strong>
+          <span>دقيقة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="seconds">00</strong>
+          <span>ثانية</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- رسالة -->
+    <section>
+
+      <h2>رسالة لكِ 💌</h2>
+
+      <div class="letter">
+
+        هبة،
+
+        <br><br>
+
+        ما أعرف كيف أقدر أختصر كل الكلام اللي في قلبي
+        في رسالة صغيرة، لكن أعرف شيء واحد...
+
+        <br><br>
+
+        وجودك في حياتي شيء أنا ممتن له جدًا،
+        وكل لحظة معك لها مكان خاص عندي.
+
+        <br><br>
+
+        أتمنى سنتك الجديدة تكون مليانة ضحك،
+        وأيام حلوة، وأشياء تحققينها وتفتخرين فيها.
+
+        <br><br>
+
+        وأتمنى مهما مرت السنوات،
+        يظل عندك دائمًا سبب يخليك تبتسمين.
+
+        <div class="signature">
+          أحبك ❤️
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- قسم الصور والفيديو لاحقًا -->
+    <section>
+
+      <h2>ذكرياتنا 📸</h2>
+
+      <p>
+        هنا راح نحط صورنا وفيديوهاتنا وذكرياتنا
+        بعد ما نجهز الموقع ❤️
+      </p>
+
+    </section>
+
+
+    <footer>
+      صُنع بحب ❤️ خصيصًا لهبة
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    // العد التنازلي إلى 22 أغسطس القادم
+    function getBirthdayDate() {
+
+      const now = new Date();
+      let year = now.getFullYear();
+
+      let birthday = new Date(year, 7, 22, 0, 0, 0);
+
+      if (birthday <= now) {
+        birthday = new Date(year + 1, 7, 22, 0, 0, 0);
+      }
+
+      return birthday;
+    }
+
+
+    function updateCountdown() {
+
+      const now = new Date();
+      const target = getBirthdayDate();
+
+      const difference = target - now;
+
+      const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+
+    // زر المفاجأة
+    function showSurprise() {
+
+      const surprise = document.getElementById("surprise");
+
+      surprise.classList.add("show");
+
+      for (let i = 0; i < 20; i++) {
+        createHeart();
+      }
+    }
+
+
+    // قلوب متحركة
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+      heart.textContent = "❤️";
+
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+      heart.style.
+      fontSize =
+        (12 + Math.random() * 20) + "px";
+
+      document.querySelector(".hearts").appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+
+    setInterval(createHeart, 900);
+
+  </script>
+
+</body>
+</html>
