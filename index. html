@@ -20,20 +20,9 @@
     body {
       font-family: Arial, sans-serif;
       background:
-        radial-gradient(circle at 50% 0%, #27143d 0%, #10091a 42%, #050308 100%);
-      color: #fff;
+        radial-gradient(circle at 50% 0%, #301446 0%, #12091d 45%, #050307 100%);
+      color: white;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 15% 25%, rgba(175, 92, 255, .10), transparent 25%),
-        radial-gradient(circle at 85% 70%, rgba(255, 82, 181, .08), transparent 28%);
-      z-index: -2;
     }
 
     /* النجوم */
@@ -41,8 +30,8 @@
     .stars {
       position: fixed;
       inset: 0;
-      pointer-events: none;
       z-index: -1;
+      pointer-events: none;
     }
 
     .star {
@@ -51,13 +40,17 @@
       height: 2px;
       background: white;
       border-radius: 50%;
-      opacity: .7;
-      animation: twinkle 3s infinite ease-in-out;
+      animation: twinkle 3s infinite;
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: .2; }
-      50% { opacity: 1; }
+      0%, 100% {
+        opacity: .2;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     /* القلوب */
@@ -67,19 +60,18 @@
       inset: 0;
       pointer-events: none;
       overflow: hidden;
-      z-index: 20;
+      z-index: 50;
     }
 
     .heart {
       position: absolute;
       bottom: -30px;
-      animation: floatHeart linear forwards;
-      opacity: 0;
+      animation: floatHeart 7s linear forwards;
     }
 
     @keyframes floatHeart {
       0% {
-        transform: translateY(0) scale(.7) rotate(0);
+        transform: translateY(0);
         opacity: 0;
       }
 
@@ -88,7 +80,7 @@
       }
 
       100% {
-        transform: translateY(-110vh) scale(1.15) rotate(360deg);
+        transform: translateY(-110vh);
         opacity: 0;
       }
     }
@@ -98,19 +90,18 @@
     .hero {
       min-height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 30px 20px;
     }
 
     .hero-content {
-      width: 100%;
       max-width: 850px;
-      animation: fadeUp 1.5s ease;
+      animation: appear 1.5s ease;
     }
 
-    @keyframes fadeUp {
+    @keyframes appear {
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -123,46 +114,55 @@
     }
 
     .date {
-      color: #d7a9ff;
+      color: #d9a5ff;
       font-size: 17px;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       margin-bottom: 25px;
     }
 
     .hero h1 {
       font-size: clamp(48px, 11vw, 100px);
-      line-height: 1.15;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #fff, #e6c5ff, #ff9fd6);
+      line-height: 1.2;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #e5c4ff,
+        #ffaddd
+      );
+
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .happy {
-      font-size: clamp(25px, 5vw, 40px);
-      color: #f7eafa;
+      font-size: clamp(28px, 6vw, 45px);
       margin-bottom: 30px;
+      color: #f7e9ff;
     }
 
     .hero-message {
+      color: #dfd0e7;
       font-size: clamp(18px, 3vw, 23px);
       line-height: 2;
-      color: #ded1e7;
-      margin: auto;
-      max-width: 650px;
     }
 
     .scroll {
       margin-top: 65px;
-      color: #d9a9ff;
-      font-size: 16px;
+      color: #d9a5ff;
       animation: bounce 2s infinite;
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
     }
 
     /* الأقسام */
@@ -176,13 +176,13 @@
     }
 
     .section-title {
+      color: #e3b8ff;
       font-size: clamp(30px, 6vw, 45px);
-      color: #e2b7ff;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .section-subtitle {
-      color: #bcaec6;
+      color: #bcaec5;
       font-size: 18px;
       margin-bottom: 35px;
     }
@@ -190,33 +190,33 @@
     /* العداد */
 
     .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
       max-width: 750px;
       margin: 40px auto 0;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .time {
-      padding: 25px 10px;
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(220,180,255,.15);
+    .time-box {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(220,180,255,.16);
       border-radius: 22px;
+      padding: 25px 10px;
       backdrop-filter: blur(10px);
     }
 
     .number {
       display: block;
-      font-size: clamp(32px, 7vw, 55px);
-      color: #e6b8ff;
+      color: #e5b8ff;
+      font-size: clamp(35px, 7vw, 55px);
       font-weight: bold;
     }
 
-    .
-label {
+    .label {
       display: block;
       margin-top: 8px;
-      color: #bdb0c6;
+      color: #bdb0c5;
     }
 
     /* الرسالة الأولى */
@@ -224,33 +224,43 @@ label {
     .letter {
       max-width: 800px;
       margin: 40px auto 0;
+
       padding: 45px 35px;
-      background: rgba(255,255,255,.075);
-      border: 1px solid rgba(220,180,255,.15);
+
+      background: rgba(255,255,255,.065);
+      border: 1px solid rgba(220,180,255,.16);
       border-radius: 28px;
-      box-shadow: 0 20px 70px rgba(0,0,0,.3);
-      color: #f4eaf8;
+
+      color: #f4e9f8;
       font-size: 20px;
-      line-height: 2.3;
-      text-align: right;
+      line-height: 2.4;
+text-align: right;
+
+      box-shadow: 0 20px 70px rgba(0,0,0,.35);
       backdrop-filter: blur(12px);
     }
 
     /* الصور */
 
     .gallery {
+      margin-top: 20px;
+
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 15px;
-      margin-top: 40px;
     }
 
     .photo {
       aspect-ratio: 3 / 4;
+
       border-radius: 20px;
-      border: 1px dashed rgba(220,180,255,.3);
-      background: rgba(255,255,255,.035);
       overflow: hidden;
+
+      background: rgba(255,255,255,.04);
+
+      border: 1px solid rgba(220,180,255,.15);
+
+      box-shadow: 0 15px 40px rgba(0,0,0,.3);
     }
 
     .photo img {
@@ -262,12 +272,21 @@ label {
 
     /* الفيديو */
 
+    .video-section {
+      text-align: center;
+    }
+
     .video-container {
-      margin-top: 40px;
+      margin-top: 35px;
+
+      width: 100%;
+
       border-radius: 25px;
       overflow: hidden;
-      background: #09060d;
-      border: 1px solid rgba(220,180,255,.15);
+
+      background: #08050c;
+      border: 1px solid rgba(220,180,255,.16);
+
       box-shadow: 0 20px 70px rgba(0,0,0,.4);
     }
 
@@ -280,50 +299,69 @@ label {
 
     .music-player {
       position: fixed;
-      bottom: 22px;
-      left: 22px;
+
+      bottom: 20px;
+      left: 20px;
+
       z-index: 100;
+
       display: flex;
       align-items: center;
       gap: 10px;
+
       padding: 10px 15px;
+
       border-radius: 999px;
-      background: rgba(25,15,35,.88);
+
+      background: rgba(25,15,35,.9);
+
       border: 1px solid rgba(220,180,255,.25);
+
       backdrop-filter: blur(12px);
+
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
     }
 
     .music-player button {
+      width: 42px;
+      height: 42px;
+
       border: none;
+      border-radius: 50%;
+
       background: #a96be8;
       color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+
       cursor: pointer;
+
       font-size: 17px;
     }
 
     .music-player span {
+      color: #e6d5ed;
       font-size: 13px;
-      color: #e4d4ec;
     }
 
     /* الهدية */
 
     .gift-section {
-      min-height: 90vh;
+      min-height: 100vh;
+
       display: flex;
       flex-direction: column;
+
       justify-content: center;
       align-items: center;
     }
 
     .gift {
-      font-size: 125px;
+      font-size: 130px;
       cursor: pointer;
+
       margin: 35px 0;
+
       transition: .4s;
+
       user-select: none;
     }
 
@@ -331,10 +369,14 @@ label {
       transform: scale(1.12) rotate(-5deg);
     }
 
+    /* الرسالة النهائية */
+
     .final-message {
       display: none;
-      max-width: 750px;
-      animation: fadeUp 1s ease;
+
+      max-width: 800px;
+
+      animation: appear 1s ease;
     }
 
     .final-message.show {
@@ -342,26 +384,35 @@ label {
     }
 
     .final-main {
-      font-size: 23px;
-      line-height: 2.2;
       color: #f5dff0;
+      font-size: 22px;
+      line-height: 2.3;
     }
 
     .second-letter {
       margin-top: 40px;
+
       padding: 35px;
+
       background: rgba(255,255,255,.06);
-      border: 1px solid rgba(220,180,255,.15);
+
+      border: 1px solid rgba(220,180,255,.16);
+
       border-radius: 25px;
-      color: #f4eaf8;
+
+      color: #f4e9f8;
+
       font-size: 19px;
-      line-height: 2.3;
+      line-height: 2.4;
+
       text-align: right;
     }
 
     .last-line {
       margin-top: 35px;
-      color: #d7a9ff;
+
+      color: #d9a5ff;
+
       font-size: 19px;
       line-height: 2;
     }
@@ -369,8 +420,7 @@ label {
     footer {
       padding: 50px 20px;
       text-align: center;
-      color: #776a80;
-      font-size: 13px;
+      color: #75677d;
     }
 
     /* الجوال */
@@ -385,10 +435,6 @@ label {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .photo:last-child {
-        grid-column: span 2;
-      }
-
       .letter {
         padding: 28px 22px;
         font-size: 18px;
@@ -398,13 +444,20 @@ label {
         font-size: 95px;
       }
 
+      .music-player {
+        bottom: 15px;
+        left: 15px;
+      }
     }
+
   </style>
 </head>
+
 
 <body>
 
   <div class="stars"></div>
+
   <div class="hearts"></div>
 
 
@@ -419,7 +472,7 @@ label {
       </div>
 
       <h1>
-        Happy Birthday هبة
+        Happy Birthday هبه
       </h1>
 
       <div class="happy">
@@ -427,7 +480,7 @@ label {
       </div>
 
       <p class="hero-message">
-        إلى أجمل شخص في الدنيا و حبيبة قلبي 
+        إلى أجمل شخص في العالم وأعلى هدية له
       </p>
 
       <div class="scroll">
@@ -446,28 +499,29 @@ label {
     <h2 class="section-title">
       اليوم الكبير 🎂
     </h2>
-<p class="section-subtitle">
+
+    <p class="section-subtitle">
       المتبقي على 22 أغسطس
     </p>
 
     <div class="countdown">
 
-      <div class="time">
+      <div class="time-box">
         <span class="number" id="days">00</span>
-        <span class="label">يوم</span>
+<span class="label">يوم</span>
       </div>
 
-      <div class="time">
+      <div class="time-box">
         <span class="number" id="hours">00</span>
         <span class="label">ساعة</span>
       </div>
 
-      <div class="time">
+      <div class="time-box">
         <span class="number" id="minutes">00</span>
         <span class="label">دقيقة</span>
       </div>
 
-      <div class="time">
+      <div class="time-box">
         <span class="number" id="seconds">00</span>
         <span class="label">ثانية</span>
       </div>
@@ -512,17 +566,27 @@ label {
 
   <section>
 
-    <h2 class="section-title">
-      ذكرياتنا 📸
-    </h2>
-
     <div class="gallery">
 
-      <div class="photo" id="photo1"></div>
-      <div class="photo" id="photo2"></div>
-      <div class="photo" id="photo3"></div>
-      <div class="photo" id="photo4"></div>
-      <div class="photo" id="photo5"></div>
+      <div class="photo">
+        <img src="./IMG_20260811_113036_757.jpg" alt="">
+      </div>
+
+      <div class="photo">
+        <img src="./IMG_20260811_113036_724.jpg" alt="">
+      </div>
+
+      <div class="photo">
+        <img src="./IMG_20260811_113035_807.jpg" alt="">
+      </div>
+
+      <div class="photo">
+        <img src="./IMG_20260811_113036_518.jpg" alt="">
+      </div>
+
+      <div class="photo">
+        <img src="./IMG_20260811_113035_857.jpg" alt="">
+      </div>
 
     </div>
 
@@ -531,7 +595,7 @@ label {
 
   <!-- الفيديو -->
 
-  <section>
+  <section class="video-section">
 
     <h2 class="section-title">
       for my baby
@@ -539,7 +603,7 @@ label {
 
     <div class="video-container">
 
-      <!-- سنضع فيديو التهنئة هنا لاحقًا -->
+      <!-- الفيديو سنضيفه لاحقًا -->
 
     </div>
 
@@ -557,10 +621,10 @@ label {
     <div
       class="gift"
       onclick="openGift()"
-      title="اضغط على الهدية"
     >
       🎁
     </div>
+
 
     <div
       id="finalMessage"
@@ -570,7 +634,7 @@ label {
       <div class="final-main">
 
         <p>
-          كل عام وأنتِ بخير يا هبة.
+          كل عام وأنتِ بخير يا هبه.
         </p>
 
         <br>
@@ -643,16 +707,25 @@ label {
 
   <div class="music-player">
 
-    <button onclick="toggleMusic()" id="musicButton">
+    <button
+      onclick="toggleMusic()"
+      id="musicButton"
+    >
       ▶
     </button>
 
     <span>
-      Music
+      Heaven Can Wait
     </span>
 
-    <audio id="backgroundMusic" loop>
-      <!-- سنضع ملف الأغنية هنا لاحقًا -->
+    <audio
+      id="backgroundMusic"
+      loop
+    >
+      <source
+        src="./Michael-Jackson-Heaven-Can-Wait-Official-Audio-128Kbps-44KHz%20%281%29.mp3"
+        type="audio/mpeg"
+      >
     </audio>
 
   </div>
@@ -662,26 +735,30 @@ label {
 
     /* النجوم */
 
-    const stars = document.querySelector(".stars");
+    const stars =
+      document.querySelector(".stars");
 
     for (let i = 0; i < 100; i++) {
 
-      const star = document.createElement("div");
+      const star =
+        document.createElement("div");
 
       star.className = "star";
 
-      star.style.left = Math.random() * 100 + "%";
-      star.style.top = Math.random() * 100 + "%";
+      star.style.left =
+        Math.random() * 100 + "%";
+
+      star.style.top =
+        Math.random() * 100 + "%";
 
       star.style.animationDelay =
         Math.random() * 3 + "s";
 
       stars.appendChild(star);
-
     }
 
 
-    /* العد التنازلي */
+    /* العداد */
 
     const birthday =
       new Date("2026-08-22T00:00:00").getTime();
@@ -689,34 +766,41 @@ label {
 
     function updateCountdown() {
 
-      const now = new Date().getTime();
+      const now =
+        new Date().getTime();
 
-      const distance = birthday - now;
+      const distance =
+birthday - now;
+
 
       if (distance <= 0) {
 
         document.getElementById("days").textContent = "00";
         document.getElementById("hours").textContent = "00";
-        document.
-getElementById("minutes").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
         document.getElementById("seconds").textContent = "00";
 
         return;
-
       }
 
+
       const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+
 
       const hours =
         Math.floor(
           (distance / (1000 * 60 * 60)) % 24
         );
 
+
       const minutes =
         Math.floor(
           (distance / (1000 * 60)) % 60
         );
+
 
       const seconds =
         Math.floor(
@@ -735,13 +819,15 @@ getElementById("minutes").textContent = "00";
 
       document.getElementById("seconds").textContent =
         String(seconds).padStart(2, "0");
-
     }
 
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+    setInterval(
+      updateCountdown,
+      1000
+    );
 
 
     /* الهدية */
@@ -752,12 +838,15 @@ getElementById("minutes").textContent = "00";
         .getElementById("finalMessage")
         .classList.add("show");
 
+
       for (let i = 0; i < 25; i++) {
 
-        setTimeout(createHeart, i * 70);
+        setTimeout(
+          createHeart,
+          i * 70
+        );
 
       }
-
     }
 
 
@@ -771,29 +860,35 @@ getElementById("minutes").textContent = "00";
       heart.className = "heart";
 
       heart.textContent =
-        Math.random() > .5 ? "❤️" : "💜";
+        Math.random() > .5
+        ? "❤️"
+        : "💜";
+
 
       heart.style.left =
         Math.random() * 100 + "vw";
 
+
       heart.style.fontSize =
         (14 + Math.random() * 18) + "px";
 
-      heart.style.animationDuration =
-        (5 + Math.random() * 5) + "s";
 
       document
         .querySelector(".hearts")
         .appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
 
+      setTimeout(
+        () => heart.remove(),
+        7000
+      );
     }
 
 
-    setInterval(createHeart, 1200);
+    setInterval(
+      createHeart,
+      1500
+    );
 
 
     /* الموسيقى */
@@ -801,23 +896,37 @@ getElementById("minutes").textContent = "00";
     function toggleMusic() {
 
       const music =
-        document.getElementById("backgroundMusic");
+        document.getElementById(
+          "backgroundMusic"
+        );
 
       const button =
-        document.getElementById("musicButton");
+        document.getElementById(
+          "musicButton"
+        );
+
 
       if (music.paused) {
 
-        music.play();
+        music.play()
+          .then(() => {
 
-        button.textContent = "❚❚";
+            button.textContent = "❚❚";
+
+          })
+          .catch(() => {
+
+            alert(
+              "اضغط على زر التشغيل مرة ثانية لتشغيل الموسيقى."
+            );
+
+          });
 
       } else {
 
         music.pause();
 
         button.textContent = "▶";
-
       }
 
     }
