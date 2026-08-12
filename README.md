@@ -1,12 +1,10 @@
-# Heba-birthday-
-A special birthday website for me baby 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday Heba ❤️</title>
+  <title>Happy Birthday هبة ❤️</title>
 
   <style>
     * {
@@ -21,58 +19,86 @@ A special birthday website for me baby
 
     body {
       font-family: Arial, sans-serif;
-      background: #0b0710;
+      background:
+        radial-gradient(circle at 50% 0%, #32194d 0%, #12091d 45%, #050308 100%);
       color: white;
       overflow-x: hidden;
     }
-
-    /* خلفية */
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      pointer-events: none;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255, 75, 170, 0.18), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(150, 70, 255, 0.16), transparent 30%);
+        radial-gradient(circle at 15% 25%, rgba(175, 92, 255, .12), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(255, 82, 181, .10), transparent 28%);
+      z-index: -2;
+    }
+
+    /* النجوم */
+
+    .stars {
+      position: fixed;
+      inset: 0;
       pointer-events: none;
       z-index: -1;
     }
 
-    /* قلوب */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: .7;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: .2;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* القلوب */
 
     .hearts {
       position: fixed;
       inset: 0;
       pointer-events: none;
       overflow: hidden;
-      z-index: 10;
+      z-index: 20;
     }
 
     .heart {
       position: absolute;
-      bottom: -40px;
+      bottom: -30px;
       animation: floatHeart linear forwards;
       opacity: 0;
     }
 
     @keyframes floatHeart {
       0% {
-        transform: translateY(0) scale(0.7) rotate(0deg);
+        transform: translateY(0) scale(.7);
         opacity: 0;
       }
 
       15% {
-        opacity: 0.8;
+        opacity: .8;
       }
 
       100% {
-        transform: translateY(-110vh) scale(1.2) rotate(360deg);
+        transform: translateY(-110vh) scale(1.15) rotate(360deg);
         opacity: 0;
       }
     }
 
-    /* الصفحة الرئيسية */
+    /* البداية */
 
     .hero {
       min-height: 100vh;
@@ -81,15 +107,15 @@ A special birthday website for me baby
       align-items: center;
       text-align: center;
       padding: 30px 20px;
-      position: relative;
     }
 
     .hero-content {
-      max-width: 800px;
-      animation: appear 1.5s ease;
+      width: 100%;
+      max-width: 850px;
+      animation: fadeUp 1.5s ease;
     }
 
-    @keyframes appear {
+    @keyframes fadeUp {
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -102,43 +128,40 @@ A special birthday website for me baby
     }
 
     .date {
-      color: #ff9dcc;
-      font-size: 18px;
-      letter-spacing: 3px;
+      color: #d7a9ff;
+      font-size: 17px;
+      letter-spacing: 5px;
       margin-bottom: 25px;
     }
 
-    h1 {
-      font-size: clamp(55px, 13vw, 120px);
-      font-weight: 800;
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        #ffb1db,
-        #ff65b4
-      );
+    .hero h1 {
+      font-size: clamp(45px, 10vw, 90px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, #e6c5ff, #ff9fd6);
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
-      margin-bottom: 15px;
     }
 
-    .birthday {
-      font-size: clamp(25px, 5vw, 42px);
-      margin-bottom: 25px;
+    .happy {
+      font-size: clamp(26px, 5vw, 42px);
+      color: #f7eafa;
+      margin-bottom: 30px;
     }
 
-    .intro {
-      color: #d9c6d5;
-      font-size: 20px;
-      line-height: 1.9;
-      max-width: 600px;
+    .hero-message {
+      font-size: clamp(18px, 3vw, 23px);
+      line-height: 2;
+      color: #ded1e7;
+      max-width: 700px;
       margin: auto;
     }
 
     .scroll {
-      margin-top: 60px;
-      color: #ff9dcc;
-      font-size: 15px;
+      margin-top: 65px;
+      color: #d9a9ff;
+      font-size: 17px;
       animation: bounce 2s infinite;
     }
 
@@ -152,205 +175,256 @@ A special birthday website for me baby
       }
     }
 
-    /* العد التنازلي */
+    /* الأقسام */
 
-    .countdown-section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 20px;
+    section {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 90px 20px;
       text-align: center;
     }
 
     .section-title {
-      font-size: 36px;
-      color: #ffabd8;
+      font-size: clamp(30px, 6vw, 45px);
+      color: #e2b7ff;
       margin-bottom: 15px;
     }
 
-    .section-text {
-      color: #cdbdca;
+    .section-subtitle {
+      color: #bcaec6;
       font-size: 18px;
       margin-bottom: 35px;
     }
 
+    /* العداد */
+
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      width: min(700px, 100%);
+      gap: 14px;
+      max-width: 750px;
+      margin: 40px auto 0;
     }
 
     .time {
       padding: 25px 10px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(220,180,255,.15);
       border-radius: 22px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
     }
 
-    .time-number {
+    .number {
       display: block;
       font-size: clamp(32px, 7vw, 55px);
+      color: #e6b8ff;
       font-weight: bold;
-      color: #ff8ec7;
     }
 
-    .time-label {
-      color: #bcaeb9;
-      margin-top: 8px;
+    .label {
       display: block;
+      margin-top: 8px;
+      color: #bdb0c6;
+      font-size: 16px;
     }
 
-    /* الرسالة */
-
-    .letter-section {
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+    /* الرسالة الأولى */
 
     .letter {
-      margin-top: 35px;
-      background: #fff9fc;
-      color: #3a2634;
+      max-width: 800px;
+      margin: 40px auto 0;
       padding: 45px 35px;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(220,180,255,.15);
+      border-radius: 28px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.3);
+      color: #f4eaf8;
+      font-size: 20px;
       line-height: 2.3;
-      font-size: 19px;
       text-align: right;
-      transform: rotate(-0.5deg);
-    }
-
-    .letter-title {
-      color: #c54283;
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
-
-    .signature {
-      margin-top: 30px;
-      text-align: left;
-      color: #c54283;
-      font-size: 22px;
+      backdrop-filter: blur(12px);
     }
 
     /* الصور */
 
-    .gallery-section {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 40px;
     }
 
-    .gallery-placeholder {
-      margin-top: 35px;
-      min-height: 300px;
-      border: 2px dashed rgba(255,160,210,0.3);
-      border-radius: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #bcaeb9;
-      font-size: 18px;
-      padding: 30px;
+    .photo {
+      aspect-ratio: 3 / 4;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(220,180,255,.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: .4s;
+    }
+
+    .photo img:hover {
+      transform: scale(1.05);
     }
 
     /* الفيديو */
 
-    .video-section {
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
+    .video-container {
+      margin-top: 40px;
+      border-radius: 25px;
+      overflow: hidden;
+      background: #09060d;
+      border: 1px solid rgba(220,180,255,.15);
+      box-shadow: 0 20px 70px rgba(0,0,0,.4);
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .video-placeholder {
-      margin-top: 35px;
-      aspect-ratio: 16 / 9;
-      border-radius: 25px;
-      border: 2px dashed rgba(255,160,210,0.3);
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    /* الموسيقى */
+
+    .music-player {
+      position: fixed;
+      bottom: 22px;
+      left: 22px;
+      z-index: 100;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: #bcaeb9;
-      overflow: hidden;
+      gap: 10px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: rgba(25,15,35,.90);
+      border: 1px solid rgba(220,180,255,.25);
+      backdrop-filter: blur(12px);
+    }
+
+    .music-player button {
+      border: none;
+      background: #a96be8;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .music-player span {
+      font-size: 13px;
+      color: #e4d4ec;
     }
 
     /* الهدية */
 
     .gift-section {
-      min-height: 80vh;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 60px 20px;
     }
 
     .gift {
-      font-size: 120px;
+      font-size: 125px;
       cursor: pointer;
-      transition: 0.4s;
-      margin: 30px 0;
+      margin: 35px 0;
+      transition: .4s;
+      user-select: none;
     }
 
     .gift:hover {
-      transform: scale(1.1) rotate(-5deg);
+      transform: scale(1.12) rotate(-5deg);
     }
 
     .final-message {
       display: none;
-      max-width: 650px;
-      font-size: 23px;
-      line-height: 2;
-      color: #ffd1e9;
-      animation: appear 1s ease;
+      max-width: 750px;
+      animation: fadeUp 1s ease;
     }
 
     .final-message.show {
       display: block;
     }
 
-    /* الفوتر */
+    .final-main {
+      font-size: 23px;
+      line-height: 2.2;
+      color: #f5dff0;
+    }
+
+    .second-letter {
+      margin-top: 40px;
+      padding: 35px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(220,180,255,.15);
+      border-radius: 25px;
+      color: #f4eaf8;
+      font-size: 19px;
+      line-height: 2.3;
+      text-align: right;
+    }
+
+    .last-line {
+      margin-top: 35px;
+      color: #d7a9ff;
+      font-size: 19px;
+      line-height: 2;
+    }
 
     footer {
+      padding: 50px 20px;
       text-align: center;
-      padding: 40px 20px;
-      color: #746775;
-      font-size: 14px;
+      color: #776a80;
+      font-size: 13px;
     }
 
     /* الجوال */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
       .countdown {
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo:last-child {
+        grid-column: span 2;
+      }
+
       .letter {
-        padding: 30px 22px;
-        font-size: 17px;
+        padding: 28px 22px;
+        font-size: 18px;
       }
 
       .gift {
-        font-size: 90px;
+        font-size: 95px;
       }
 
     }
-
   </style>
 </head>
 
-
 <body>
 
+  <div class="stars"></div>
   <div class="hearts"></div>
 
 
@@ -364,20 +438,20 @@ A special birthday website for me baby
         AUGUST 22
       </div>
 
-      <h1>هبة</h1>
+      <h1>
+        Happy Birthday هبة
+      </h1>
 
-      <div class="birthday">
-        Happy Birthday ❤️
+      <div class="happy">
+     Happy Birthday
       </div>
 
-      <p class="intro">
-        إلى الشخص اللي يستحق يوم كامل من الفرح،
-        والكثير من الكلام الحلو،
-        وهذه المساحة الصغيرة كلها لكِ.
+      <p class="hero-message">
+        إلى أجمل شخص في العالم وأعلى هدية له
       </p>
 
       <div class="scroll">
-        ↓ اسحبي لتحت ↓
+        اسحب للأسفل ↓
       </div>
 
     </div>
@@ -385,38 +459,38 @@ A special birthday website for me baby
   </section>
 
 
-  <!-- العد التنازلي -->
+  <!-- العداد -->
 
-  <section class="countdown-section">
+  <section>
 
     <h2 class="section-title">
-      يومك الكبير يقترب 🎂
+      اليوم الكبير 🎂
     </h2>
 
-    <p class="section-text">
-      باقي على 22 أغسطس...
+    <p class="section-subtitle">
+      المتبقي على 22 أغسطس
     </p>
 
     <div class="countdown">
 
       <div class="time">
-        <span class="time-number" id="days">00</span>
-        <span class="time-label">يوم</span>
+        <span class="number" id="days">00</span>
+        <span class="label">يوم</span>
       </div>
 
       <div class="time">
-        <span class="time-number" id="hours">00</span>
-        <span class="time-label">ساعة</span>
+        <span class="number" id="hours">00</span>
+        <span class="label">ساعة</span>
       </div>
 
       <div class="time">
-        <span class="time-number" id="minutes">00</span>
-        <span class="time-label">دقيقة</span>
+        <span class="number" id="minutes">00</span>
+        <span class="label">دقيقة</span>
       </div>
 
       <div class="time">
-        <span class="time-number" id="seconds">00</span>
-        <span class="time-label">ثانية</span>
+        <span class="number" id="seconds">00</span>
+        <span class="label">ثانية</span>
       </div>
 
     </div>
@@ -424,42 +498,31 @@ A special birthday website for me baby
   </section>
 
 
-  <!-- الرسالة -->
+  <!-- الرسالة الأولى -->
 
-  <section class="letter-section">
+  <section>
 
     <h2 class="section-title">
-      رسالة لكِ 💌
+      رسالة لأجمل شخص في الدنيا 💌
     </h2>
 
     <div class="letter">
 
-      <div class="letter-title">
-        إلى هبة...
-      </div>
-
       <p>
-        في يوم مثل هذا، قبل سنوات، جاء شخص إلى العالم
-        وصار وجوده بعد ذلك سببًا للكثير من اللحظات الجميلة.
+        في يوم مثل هذا قبل سنوات ولدت أجمل إنسانة في الدنيا
       </p>
 
       <br>
 
       <p>
-        أتمنى أن تكون سنتك الجديدة مليئة بالأيام التي
-        تجعلك تبتسمين، وبالأشياء التي تتمنينها وتتحقق.
+        فرح وسعادة وهبه لكل شخص حولها
       </p>
 
       <br>
 
       <p>
-      وهذا الموقع مجرد بداية...
-        لأن عندي لكِ أشياء كثيرة لسه ما شفتيها ❤️
+        كل عام وأنتِ بخير هبوشي، وأتمنى تكون سنواتك الجاية كلها سعادة وفرح وتحققي كل أهدافك
       </p>
-
-      <div class="signature">
-        لكِ دائمًا ❤️
-      </div>
 
     </div>
 
@@ -468,18 +531,34 @@ A special birthday website for me baby
 
   <!-- الصور -->
 
-  <section class="gallery-section">
+  <section>
 
     <h2 class="section-title">
       ذكرياتنا 📸
     </h2>
 
-    <p class="section-text">
-      هنا راح تكون صورنا الخمس.
-    </p>
+    <div class="gallery">
 
-    <div class="gallery-placeholder">
-      صور هبة راح تنضاف هنا لاحقًا ❤️
+      <div class="photo">
+        <img src="IMG_20260811_113035_807.jpg" alt="صورة 1">
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260811_113035_857.jpg" alt="صورة 2">
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260811_113035_518.jpg" alt="صورة 3">
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260811_113036_724.jpg" alt="صورة 4">
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260811_113036_757.jpg" alt="صورة 5">
+      </div>
+
     </div>
 
   </section>
@@ -487,18 +566,16 @@ A special birthday website for me baby
 
   <!-- الفيديو -->
 
-  <section class="video-section">
+  <section>
 
     <h2 class="section-title">
-      شيء أريدك أن تشاهديه 🎥
+      for my baby
     </h2>
 
-    <p class="section-text">
-      فيديو التهنئة راح يكون هنا.
-    </p>
+    <div class="video-container">
 
-    <div class="video-placeholder">
-      فيديو التهنئة راح ينضاف هنا ❤️
+      <!-- الفيديو نضيفه هنا لاحقًا -->
+
     </div>
 
   </section>
@@ -512,37 +589,80 @@ A special birthday website for me baby
       One Last Thing...
     </h2>
 
-    <p class="section-text">
-      باقي شيء واحد فقط.
-    </p>
-
     <div
       class="gift"
       onclick="openGift()"
-      title="اضغطي على الهدية"
+      title="اضغط على الهدية"
     >
       🎁
     </div>
 
-    <div id="finalMessage" class="final-message">
+    <div
+      id="finalMessage"
+      class="final-message"
+    >
 
-      <p>
-        كل عام وأنتِ بخير يا هبة ❤️
-      </p>
+      <div class="final-main">
 
-      <br>
+        <p>
+          كل عام وأنتِ بخير يا هبة.
+        </p>
 
-      <p>
-        أتمنى أن تكون هذه السنة أجمل من كل السنوات
-        اللي قبلها، وأن تبقى ابتسامتك موجودة دائمًا.
-      </p>
+        <br>
 
-      <br>
+        <p>
+          أتمنى أن تكون هذه السنة أجمل من كل السنوات اللي قبلها،
+          وأن تبقى ابتسامتك موجودة للأبد.
+        </p>
 
-      <p>
-        وهذه الهدية الصغيرة ما هي إلا طريقة بسيطة
-        أقول لك فيها إنك شخص مميز جدًا. ✨
-      </p>
+      </div>
+
+
+      <!-- الرسالة الثانية -->
+
+      <div class="second-letter">
+
+        <p>
+          أحبك
+        </p>
+
+        <br>
+
+        <p>
+          أحبك أكثر من كل شيء، أنتِ أجمل شخص دخل حياتي.
+        </p>
+
+        <br>
+
+        <p>
+          من يوم تعرفت عليكِ وأنا حاس بالتغيير اللي صار في حياتي.
+        </p>
+
+        <br>
+
+        <p>
+          كل يوم وكل لحظة أقضيها معك تملأني فرح،
+          وأتمنى دائمًا إن اللحظات ذي تدوم وأقدر أكون معك لآخر يوم.
+        </p>
+
+        <br>
+
+        <p>
+          أنتِ هبتي وأغلى شيء عندي.
+        </p>
+
+        <br>
+
+        <p>
+          مرة أحبك. ❤️
+        </p>
+
+      </div>
+
+
+      <div class="last-line">
+        وهذه هدية صغيرة ما هي إلا طريقة بسيطة أقول لك إنك شخص مميز.
+      </div>
 
     </div>
 
@@ -550,27 +670,73 @@ A special birthday website for me baby
 
 
   <footer>
-    Made with love ❤️ for Heba
+    ❤️
   </footer>
+
+
+  <!-- الموسيقى -->
+
+  <div class="music-player">
+
+    <button onclick="toggleMusic()" id="musicButton">
+      ▶
+    </button>
+
+    <span>
+      Heaven Can Wait
+    </span>
+
+    <audio id="backgroundMusic" loop>
+
+      <source
+        src="Michael-Jackson-Heaven-Can-Wait-Official-Audio-128Kbps-44KHz%20%281%29.mp3"
+        type="audio/mpeg"
+      >
+
+    </audio>
+
+  </div>
 
 
   <script>
 
-    /*
-      العد التنازلي
-      22 أغسطس 2026 الساعة 12:00 AM
-    */
+    /* النجوم */
 
-    const birthday = new Date(
-      "2026-08-22T00:00:00"
-    ).getTime();
+    const stars = document.querySelector(".stars");
+
+    for (let i = 0; i < 100; i++) {
+    const star = document.createElement("div");
+
+      star.className = "star";
+
+      star.style.left =
+        Math.random() * 100 + "%";
+
+      star.style.top =
+        Math.random() * 100 + "%";
+
+      star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+      stars.appendChild(star);
+
+    }
+
+
+    /* العداد */
+
+    const birthday =
+      new Date("2026-08-22T00:00:00").getTime();
 
 
     function updateCountdown() {
 
-      const now = new Date().getTime();
+      const now =
+        new Date().getTime();
 
-      const distance = birthday - now;
+      const distance =
+        birthday - now;
+
 
       if (distance <= 0) {
 
@@ -583,21 +749,32 @@ A special birthday website for me baby
       }
 
 
-      const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-      );
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
 
-      const hours = Math.floor(
-        (distance / (1000 * 60 * 60)) % 24
-      );
 
-      const minutes = Math.floor(
-        (distance / (1000 * 60)) % 60
-      );
+      const hours =
+        Math.floor(
+          (distance /
+          (1000 * 60 * 60)) % 24
+        );
 
-      const seconds = Math.floor(
-        (distance / 1000) % 60
-      );
+
+      const minutes =
+        Math.floor(
+          (distance /
+          (1000 * 60)) % 60
+        );
+
+
+      const seconds =
+        Math.floor(
+          (distance /
+          1000) % 60
+        );
 
 
       document.getElementById("days").textContent =
@@ -617,12 +794,13 @@ A special birthday website for me baby
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+    setInterval(
+      updateCountdown,
+      1000
+    );
 
 
-    /*
-      فتح الهدية
-    */
+    /* الهدية */
 
     function openGift() {
 
@@ -630,53 +808,104 @@ A special birthday website for me baby
         .getElementById("finalMessage")
         .classList.add("show");
 
+
       for (let i = 0; i < 25; i++) {
 
-        setTimeout(() => {
-          createHeart();
-        }, i * 80);
+        setTimeout(
+          createHeart,
+          i * 70
+        );
 
       }
 
     }
 
 
-    /*
-      القلوب المتحركة
-    */
+    /* القلوب */
 
     function createHeart() {
 
       const heart =
         document.createElement("div");
 
-      heart.className = "heart";
+      heart.className =
+        "heart";
 
       heart.textContent =
-        Math.random() > 0.5 ? "❤️" : "💕";
+        Math.random() > .5
+        ? "❤️"
+        : "💜";
+
 
       heart.style.left =
         Math.random() * 100 + "vw";
 
+
       heart.style.fontSize =
         (14 + Math.random() * 18) + "px";
 
+
       heart.style.animationDuration =
         (5 + Math.random() * 5) + "s";
+
 
       document
         .querySelector(".hearts")
         .appendChild(heart);
 
 
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
+      setTimeout(
+        () => heart.remove(),
+        10000
+      );
 
     }
 
 
-    setInterval(createHeart, 1200);
+    setInterval(
+      createHeart,
+      1200
+    );
+
+
+    /* الموسيقى */
+
+    function toggleMusic() {
+
+      const music =
+        document.getElementById(
+          "backgroundMusic"
+        );
+
+      const button =
+        document.getElementById(
+          "musicButton"
+        );
+
+
+      if (music.paused) {
+
+        music.play()
+          .then(() => {
+
+            button.textContent = "❚❚";
+
+          })
+          .catch(() => {
+
+            alert("اضغط مرة ثانية لتشغيل الموسيقى.");
+
+          });
+
+      } else {
+
+        music.pause();
+
+        button.textContent = "▶";
+
+      }
+
+    }
 
   </script>
 
