@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday هبة ❤️</title>
+  <title>Happy Birthday هبه ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -83,6 +84,7 @@
     }
 
     @keyframes floatHeart {
+
       0% {
         transform: translateY(0) scale(.7);
         opacity: 0;
@@ -96,6 +98,7 @@
         transform: translateY(-110vh) scale(1.15) rotate(360deg);
         opacity: 0;
       }
+
     }
 
     /* البداية */
@@ -116,6 +119,7 @@
     }
 
     @keyframes fadeUp {
+
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -125,6 +129,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
 
     .date {
@@ -166,6 +171,7 @@
     }
 
     @keyframes bounce {
+
       0%, 100% {
         transform: translateY(0);
       }
@@ -173,6 +179,7 @@
       50% {
         transform: translateY(10px);
       }
+
     }
 
     /* الأقسام */
@@ -250,18 +257,25 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      margin-top: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 900px;
+      margin: 40px auto 0;
     }
 
     .photo {
-      aspect-ratio: 3 / 4;
-      border-radius: 20px;
+      aspect-ratio: 1 / 1.15;
+      border-radius: 28px;
       overflow: hidden;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(220,180,255,.2);
-      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+      background: rgba(255,255,255,.04);
+      border: 2px solid rgba(220,180,255,.18);
+      box-shadow: 0 15px 45px rgba(0,0,0,.35);
+      transition: .4s ease;
+    }
+
+    .photo:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 55px rgba(190,120,255,.25);
     }
 
     .photo img {
@@ -269,11 +283,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: .4s;
+      transition: .5s ease;
     }
 
-    .photo img:hover {
-      transform: scale(1.05);
+    .photo:hover img {
+      transform: scale(1.06);
     }
 
     /* الفيديو */
@@ -403,10 +417,11 @@
 
       .gallery {
         grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
       }
 
       .photo:last-child {
-        grid-column: span 2;
+        grid-column: span 1;
       }
 
       .letter {
@@ -419,6 +434,7 @@
       }
 
     }
+
   </style>
 </head>
 
@@ -428,9 +444,7 @@
   <div class="hearts"></div>
 
 
-  <!-- البداية -->
-
-  <section class="hero">
+<section class="hero">
 
     <div class="hero-content">
 
@@ -439,11 +453,11 @@
       </div>
 
       <h1>
-        Happy Birthday هبة
+        Happy Birthday هبه
       </h1>
 
       <div class="happy">
-     Happy Birthday
+        Happy Birthday
       </div>
 
       <p class="hero-message">
@@ -534,29 +548,44 @@
   <section>
 
     <h2 class="section-title">
-      ذكرياتنا 📸
+      أجمل بنوتة في الدنيا 📸
     </h2>
 
     <div class="gallery">
 
       <div class="photo">
-        <img src="IMG_20260811_113035_807.jpg" alt="صورة 1">
+        <img
+          src="IMG_20260811_113035_807.jpg"
+          alt="هبه"
+        >
       </div>
 
       <div class="photo">
-        <img src="IMG_20260811_113035_857.jpg" alt="صورة 2">
+        <img
+          src="IMG_20260811_113035_857.jpg"
+          alt="هبه"
+        >
       </div>
 
       <div class="photo">
-        <img src="IMG_20260811_113035_518.jpg" alt="صورة 3">
+        <img
+          src="IMG_20260811_113035_518.jpg"
+          alt="هبه"
+        >
       </div>
 
       <div class="photo">
-        <img src="IMG_20260811_113036_724.jpg" alt="صورة 4">
+        <img
+          src="IMG_20260811_113036_724.jpg"
+          alt="هبه"
+        >
       </div>
 
       <div class="photo">
-        <img src="IMG_20260811_113036_757.jpg" alt="صورة 5">
+        <img
+          src="IMG_20260811_113036_757.jpg"
+          alt="هبه"
+        >
       </div>
 
     </div>
@@ -678,15 +707,21 @@
 
   <div class="music-player">
 
-    <button onclick="toggleMusic()" id="musicButton">
+    <button
+      onclick="toggleMusic()"
+      id="musicButton"
+    >
       ▶
     </button>
 
     <span>
-      Heaven Can Wait
+    Heaven Can Wait
     </span>
 
-    <audio id="backgroundMusic" loop>
+    <audio
+      id="backgroundMusic"
+      loop
+    >
 
       <source
         src="Michael-Jackson-Heaven-Can-Wait-Official-Audio-128Kbps-44KHz%20%281%29.mp3"
@@ -702,12 +737,16 @@
 
     /* النجوم */
 
-    const stars = document.querySelector(".stars");
+    const stars =
+      document.querySelector(".stars");
 
     for (let i = 0; i < 100; i++) {
-    const star = document.createElement("div");
 
-      star.className = "star";
+      const star =
+        document.createElement("div");
+
+      star.className =
+        "star";
 
       star.style.left =
         Math.random() * 100 + "%";
@@ -723,10 +762,12 @@
     }
 
 
-    /* العداد */
+    /* العد التنازلي */
 
     const birthday =
-      new Date("2026-08-22T00:00:00").getTime();
+      new Date(
+        "2026-08-22T00:00:00"
+      ).getTime();
 
 
     function updateCountdown() {
@@ -740,12 +781,20 @@
 
       if (distance <= 0) {
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById("days").textContent =
+          "00";
+
+        document.getElementById("hours").textContent =
+          "00";
+
+        document.getElementById("minutes").textContent =
+          "00";
+
+        document.getElementById("seconds").textContent =
+          "00";
 
         return;
+
       }
 
 
@@ -888,12 +937,15 @@
         music.play()
           .then(() => {
 
-            button.textContent = "❚❚";
+            button.textContent =
+              "❚❚";
 
           })
           .catch(() => {
 
-            alert("اضغط مرة ثانية لتشغيل الموسيقى.");
+            alert(
+              "اضغط مرة ثانية لتشغيل الموسيقى."
+            );
 
           });
 
@@ -901,7 +953,8 @@
 
         music.pause();
 
-        button.textContent = "▶";
+        button.textContent =
+          "▶";
 
       }
 
@@ -911,3 +964,4 @@
 
 </body>
 </html>
+  <!-- البداية -->
