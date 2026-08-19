@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -292,22 +293,19 @@
 
     /* الفيديو */
 
-    .video-container {4_5778680816603241723.MP4
+    .video-container {
       margin-top: 40px;
       border-radius: 25px;
       overflow: hidden;
       background: #09060d;
       border: 1px solid rgba(220,180,255,.15);
       box-shadow: 0 20px 70px rgba(0,0,0,.4);
-      min-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .video-container video {
       width: 100%;
       display: block;
+      border-radius: 25px;
     }
 
     /* الموسيقى */
@@ -438,17 +436,19 @@
   </style>
 </head>
 
+
 <body>
 
   <div class="stars"></div>
   <div class="hearts"></div>
 
 
-<section class="hero">
+  <!-- البداية -->
+
+  <section class="hero">
 
     <div class="hero-content">
-
-      <div class="date">
+    <div class="date">
         AUGUST 22
       </div>
 
@@ -461,7 +461,7 @@
       </div>
 
       <p class="hero-message">
-        إلى أجمل و أغلى انسانة في الدنيا 
+        إلى أجمل شخص في العالم وأعلى هدية له
       </p>
 
       <div class="scroll">
@@ -555,21 +555,7 @@
 
       <div class="photo">
         <img
-          src="IMG_20260811_113035_807.jpg"
-          alt="هبه"
-        >
-      </div>
-
-      <div class="photo">
-        <img
-          src="IMG_20260811_113035_857.jpg"
-          alt="هبه"
-        >
-      </div>
-
-      <div class="photo">
-        <img
-          src="IMG_20260811_113035_518.jpg"
+          src="IMG_20260811_113036_757.jpg"
           alt="هبه"
         >
       </div>
@@ -583,7 +569,21 @@
 
       <div class="photo">
         <img
-          src="IMG_20260811_113036_757.jpg"
+          src="IMG_20260811_113035_807.jpg"
+          alt="هبه"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="IMG_20260811_113036_518.jpg"
+          alt="هبه"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="IMG_20260811_113035_857.jpg"
           alt="هبه"
         >
       </div>
@@ -603,7 +603,16 @@
 
     <div class="video-container">
 
-      <!-- الفيديو نضيفه هنا لاحقًا -->
+      <video controls playsinline>
+
+        <source
+          src="4_5778680816603241723.MP4"
+          type="video/mp4"
+        >
+
+        المتصفح لا يدعم تشغيل الفيديو.
+
+      </video>
 
     </div>
 
@@ -708,14 +717,14 @@
   <div class="music-player">
 
     <button
-      onclick="toggleMusic()"
+    onclick="toggleMusic()"
       id="musicButton"
     >
       ▶
     </button>
 
     <span>
-    Heaven Can Wait
+      Heaven Can Wait
     </span>
 
     <audio
@@ -963,5 +972,5 @@
   </script>
 
 </body>
+
 </html>
-  <!-- البداية -->
