@@ -812,7 +812,7 @@
         </div>
 
         <p class="hero-message">
-          إلى أجمل شخص في العالم وأعلى هدية له
+          إلى أجمل و اغلى شخص في الدنيا 
         </p>
 
         <div class="scroll">
@@ -829,7 +829,7 @@
     <section>
 
       <h2 class="section-title">
-        اليوم الكبير 🎂
+        اليوم لكبير 🎂
       </h2>
 
       <p class="section-subtitle">
@@ -994,7 +994,7 @@
         <div class="final-main">
 
           <p>
-            كل عام وأنتِ بخير يا هبة.
+            كل عام وأنتِ بخير يا هبه
           </p>
 
           <br>
