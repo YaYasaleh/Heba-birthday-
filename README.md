@@ -704,7 +704,7 @@
       </div>
 
       <h1 class="lock-title">
-        ❤️ هبة ❤️
+        ❤️ هبه ❤️
       </h1>
 
       <p class="lock-subtitle">
